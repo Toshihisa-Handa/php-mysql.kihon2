@@ -11,7 +11,7 @@ $pdo = db_connect();
 
 //2.データ登録sql作成（基本のinset.phpやupdate.phpをコピペして編集する）
 //表示の基本の書き方：SELECT 表示するカラム FROM テーブル名;
-$sql = 'SELECT * FROM gs_bmLogin_table2 WHERE uid=:uid AND upass=:upass';//ANDを入れることでidとpαssの両方が合致する人を指定している
+$sql = 'SELECT * FROM gs_bm_table2 WHERE uid=:uid AND upass=:upass';//ANDを入れることでidとpαssの両方が合致する人を指定している
 
 //2-2: sql文をstmtに渡す処理
 $stmt = $pdo->prepare($sql);

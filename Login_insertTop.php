@@ -24,7 +24,7 @@ try {
 
 //３．データ登録SQL作成
 //prepare("")の中にはmysqlのSQLで入力したINSERT文を入れて修正すれば良いイメージ
-$stmt = $pdo->prepare("INSERT INTO gs_bmLogin_table2(uname,uid,upass)VALUES(:uname,:uid,:upass);
+$stmt = $pdo->prepare("INSERT INTO gs_bm_table2(indate,uname,uid,upass)VALUES(sysdate(),:uname,:uid,:upass);
 ");
 $stmt->bindValue(':uname', h($uname), PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)  第３引数は省略出来るが、セキュリティの観点から記述している。文字列か数値はmysqlのデータベースに登録したものがvarcharaかintかというところで判断する
 $stmt->bindValue(':uid', h($uid), PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
