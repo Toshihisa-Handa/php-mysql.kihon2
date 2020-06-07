@@ -1,4 +1,8 @@
 <?php
+session_start();
+include('funcs.php');//別の階層にfuncs.phpがある場合は「betukaisou/funcs.php」などパスを変えてincludesする
+loginCheck();
+
 
 //1. DB接続します
 try {
@@ -32,7 +36,7 @@ if($status==false){
   $view .='<p>';
   // $view .='<a href="u_view.php? id='.$r["id"].'">';
   $view .=$r["indate"].":".$r["name"].":".$r["kan"]."巻";
-  $view .='</a>';
+  // $view .='</a>';
 //以下はupdateのリンクタグの記述
   $view .='  ';
   $view .='<a href="U_view.php? id='.$r["id"].'">';
@@ -59,6 +63,8 @@ if($status==false){
 <body>
   <h1>データ登録</h1>
   <a href="index2.php">登録へ戻る</a>
+  <p><a href="logout.php">ログアウト</a></p>
+
  <p><?=$view?></p>
 </body>
 </html>

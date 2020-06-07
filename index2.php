@@ -1,3 +1,10 @@
+<?php 
+session_start();
+include('funcs.php');//別の階層にfuncs.phpがある場合は「betukaisou/funcs.php」などパスを変えてincludesする
+loginCheck();
+?>
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -16,7 +23,7 @@
   </nav>
 </header>
 <!-- Head[End] -->
-
+<p><a href="logout.php">ログアウト</a></p>
 <!-- Main[Start] -->
 <form method="post" action="insert2.php">
   <div class="jumbotron">
